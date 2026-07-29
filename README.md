@@ -1,1 +1,1 @@
-# ujm-physical-interaction
+# Physical Interaction Design at UJM Course Material

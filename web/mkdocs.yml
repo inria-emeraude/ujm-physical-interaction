@@ -1,0 +1,52 @@
+site_name: Physical Interaction Design @ UJM
+site_description: Physical Interaction Design course at UJM
+nav:
+    - Lectures:
+        - ' 1. NIME: New Interfaces for Musical Expression ' : lectures/nime.md
+        - ' 2. Arduino Programming Basics ' : lectures/arduino.md
+        - ' 3. Basic Electronics and Analog Sensors ' : lectures/electronics.md
+        - ' 4. Serial and MIDI Communication ' : lectures/communication.md
+        - ' 5. Mapping and Buying Stuff ' : lectures/mapping.md
+        - ' 6. Sensors ' : lectures/sensors.md
+        - ' 7. Digital Fabrication ' : lectures/fabrication.md
+        - ' 8. Embedded Systems ' : lectures/embedded.md
+        - ' 9. Final Project Brainstorm ' : lectures/final-proj.md
+    - Assignments:
+        - ' 1. Random Note Generator ' : assignments/random.md
+        - ' 2. Hardware Control ' : assignments/hardware.md
+        - ' 3. Digital Fabrication ' : assignments/fabrication.md
+        - ' 4. Final Project Prep ' : assignments/final-proj.md
+    - Last Year's Projects: https://ccrma.stanford.edu/~rmichon/digicrea25/
+
+theme: 
+  name: yeti
+  navigation_depth: 3
+
+site_dir: ../docs
+site_url: https://inria-emeraude.github.io/ujm-physical-interaction/
+
+extra:
+    social:
+        - type: github
+          link: https://inria-emeraude.github.io/ujm-physical-interaction/
+        - type: home
+          link: https://inria-emeraude.github.io/ujm-physical-interaction/
+        - type: envelope
+          link: mailto:romain.michon@univ-st-etienne.fr
+
+plugins:
+  - search
+
+extra_css: [extra.css]
+
+extra:
+  search:
+    language: en
+
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+
+markdown_extensions:
+    - mdx_math
+    - markdown_include.include:
+        base_path: './docs'
