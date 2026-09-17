@@ -16,7 +16,7 @@ A project in which students will create their own physical controller will serve
 
 ## Instructor
 
-[Romain Michon](https://ccrma.stanford.edu/~rmichon) ((romain.michon@univ-st-etienne.fr)[mailto:romain.michon@univ-st-etienne.fr]). Feel free to reach out to him at any point during the semester.
+[Romain Michon](https://ccrma.stanford.edu/~rmichon) ([romain.michon@univ-st-etienne.fr](mailto:romain.michon@univ-st-etienne.fr). Feel free to reach out to him at any point during the semester.
 
 ## Schedule and Course Materials
 
