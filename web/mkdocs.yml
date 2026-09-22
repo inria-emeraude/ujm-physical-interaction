@@ -3,19 +3,19 @@ site_description: Physical Interaction Design course at UJM
 nav:
     - Lectures:
         - ' 1. NIME: New Interfaces for Musical Expression ' : lectures/nime.md
-        - ' 2. Arduino Programming Basics ' : lectures/arduino.md
-        - ' 3. Basic Electronics and Analog Sensors ' : lectures/electronics.md
-        - ' 4. Serial and MIDI Communication ' : lectures/communication.md
-        - ' 5. Mapping and Buying Stuff ' : lectures/mapping.md
-        - ' 6. Sensors ' : lectures/sensors.md
-        - ' 7. Digital Fabrication ' : lectures/fabrication.md
-        - ' 8. Embedded Systems ' : lectures/embedded.md
-        - ' 9. Final Project Brainstorm ' : lectures/final-proj.md
+        # - ' 2. Arduino Programming Basics ' : lectures/arduino.md
+        # - ' 3. Basic Electronics and Analog Sensors ' : lectures/electronics.md
+        # - ' 4. Serial and MIDI Communication ' : lectures/communication.md
+        # - ' 5. Mapping and Buying Stuff ' : lectures/mapping.md
+        # - ' 6. Sensors ' : lectures/sensors.md
+        # - ' 7. Digital Fabrication ' : lectures/fabrication.md
+        # - ' 8. Embedded Systems ' : lectures/embedded.md
+        # - ' 9. Final Project Brainstorm ' : lectures/final-proj.md
     - Assignments:
         - ' 1. Random Note Generator ' : assignments/random.md
-        - ' 2. Hardware Control ' : assignments/hardware.md
-        - ' 3. Digital Fabrication ' : assignments/fabrication.md
-        - ' 4. Final Project Prep ' : assignments/final-proj.md
+        # - ' 2. Hardware Control ' : assignments/hardware.md
+        # - ' 3. Digital Fabrication ' : assignments/fabrication.md
+        # - ' 4. Final Project Prep ' : assignments/final-proj.md
     - Last Year's Projects: https://ccrma.stanford.edu/~rmichon/digicrea25/
 
 theme: 
