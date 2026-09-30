@@ -3,7 +3,7 @@ site_description: Physical Interaction Design course at UJM
 nav:
     - Lectures:
         - ' 1. NIME: New Interfaces for Musical Expression ' : lectures/nime.md
-        # - ' 2. Arduino Programming Basics ' : lectures/arduino.md
+        - ' 2. Arduino Programming Basics ' : lectures/arduino.md
         # - ' 3. Basic Electronics and Analog Sensors ' : lectures/electronics.md
         # - ' 4. Serial and MIDI Communication ' : lectures/communication.md
         # - ' 5. Mapping and Buying Stuff ' : lectures/mapping.md
