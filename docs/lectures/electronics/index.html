@@ -8,7 +8,7 @@
         
         <link rel="canonical" href="https://inria-emeraude.github.io/ujm-physical-interaction/lectures/electronics/">
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Basic Electronics and Analog Sensors - Physical Interaction Design @ UJM</title>
+        <title> 3. Basic Electronics and Analog Sensors  - Physical Interaction Design @ UJM</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/fontawesome.min.css" rel="stylesheet">
         <link href="../../css/brands.min.css" rel="stylesheet">
@@ -36,7 +36,7 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Lectures</a>
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Lectures</a>
                                 <ul class="dropdown-menu">
                                     
 <li>
@@ -45,6 +45,10 @@
                                     
 <li>
     <a href="../arduino/" class="dropdown-item"> 2. Arduino Programming Basics </a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page"> 3. Basic Electronics and Analog Sensors </a>
 </li>
                                 </ul>
                             </li>
@@ -68,6 +72,16 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../arduino/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../../assignments/random/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
                     </ul>
                 </div>
             </div>
@@ -97,6 +111,18 @@
               </ul>
             </li>
             <li class="nav-item" data-bs-level="2"><a href="#using-a-potentiometer-or-a-button-with-the-teensy" class="nav-link">Using a Potentiometer or a Button with the Teensy</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#exercise" class="nav-link">Exercise</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#mapping-printed-values" class="nav-link">Mapping Printed Values</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#implementing-a-switch" class="nav-link">Implementing a Switch</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -149,7 +175,17 @@ void loop(){
   Serial.println(potVal);
   delay(100);
 }
-</code></pre></div>
+</code></pre>
+<h2 id="exercise">Exercise</h2>
+<h2 id="mapping-printed-values">Mapping Printed Values</h2>
+<ul>
+<li>Modify the range of the potentiometer so that printed values are between 300 and 400 instead of 0 and 1023.</li>
+<li>When pressing the button, values should be between 400 and 500.</li>
+</ul>
+<h2 id="implementing-a-switch">Implementing a Switch</h2>
+<ul>
+<li>Modify the code from the <a href="../../assignments/random/">first assignment</a> so that switching to a new note happens when pressing the button instead of every <em>n</em> milliseconds. New notes should be selected once at a time: pressing the button once triggers only one new note. </li>
+</ul></div>
             </div>
         </div>
 

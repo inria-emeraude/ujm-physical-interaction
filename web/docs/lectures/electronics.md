@@ -45,3 +45,14 @@ void loop(){
   delay(100);
 }
 ```
+
+## Exercise 
+
+## Mapping Printed Values
+
+* Modify the range of the potentiometer so that printed values are between 300 and 400 instead of 0 and 1023.
+* When pressing the button, values should be between 400 and 500.
+
+## Implementing a Switch
+
+* Modify the code from the [first assignment](../assignments/random.md) so that switching to a new note happens when pressing the button instead of every *n* milliseconds. New notes should be selected once at a time: pressing the button once triggers only one new note. 
