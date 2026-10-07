@@ -6,7 +6,6 @@
 * You must complete this assignment before the next session (during which a solution will be given).
 * This assignment is not graded.
 
-<!--
 ### Possible solution
 
 ```
@@ -22,4 +21,3 @@ void loop() {
   delay(500);
 }
 ```
--->
