@@ -50,6 +50,10 @@
 <li>
     <a href="./" class="dropdown-item active" aria-current="page"> 3. Basic Electronics and Analog Sensors </a>
 </li>
+                                    
+<li>
+    <a href="../communication/" class="dropdown-item"> 4. Serial and MIDI Communication </a>
+</li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
@@ -58,6 +62,10 @@
                                     
 <li>
     <a href="../../assignments/random/" class="dropdown-item"> 1. Random Note Generator </a>
+</li>
+                                    
+<li>
+    <a href="../../assignments/hardware/" class="dropdown-item"> 2. Hardware Control </a>
 </li>
                                 </ul>
                             </li>
@@ -78,7 +86,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../../assignments/random/" class="nav-link">
+                                <a rel="next" href="../communication/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -120,10 +128,18 @@
             </li>
             <li class="nav-item" data-bs-level="2"><a href="#mapping-printed-values" class="nav-link">Mapping Printed Values</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#possible-solution" class="nav-link">Possible Solution</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
             <li class="nav-item" data-bs-level="2"><a href="#implementing-a-switch" class="nav-link">Implementing a Switch</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#possible-solution_1" class="nav-link">Possible Solution</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
               </ul>
@@ -182,10 +198,67 @@ void loop(){
 <li>Modify the range of the potentiometer so that printed values are between 300 and 400 instead of 0 and 1023.</li>
 <li>When pressing the button, values should be between 400 and 500.</li>
 </ul>
+<h3 id="possible-solution">Possible Solution</h3>
+<pre><code>void setup(){
+  pinMode(0,INPUT);
+  Serial.begin(9600);
+}
+
+void loop(){
+  int offset = 0;
+  if(digitalRead(0)){
+    offset = 100;
+  }
+  int potVal = analogRead(A0)/1023*100 + 300 + offset;
+  Serial.print(&quot;Pot Val: &quot;);
+  Serial.println(potVal);
+  delay(100);
+}
+</code></pre>
 <h2 id="implementing-a-switch">Implementing a Switch</h2>
 <ul>
 <li>Modify the code from the <a href="../../assignments/random/">first assignment</a> so that switching to a new note happens when pressing the button instead of every <em>n</em> milliseconds. New notes should be selected once at a time: pressing the button once triggers only one new note. </li>
-</ul></div>
+</ul>
+<h3 id="possible-solution_1">Possible Solution</h3>
+<pre><code>int state = HIGH;      // the current state of the output pin
+int reading;           // the current reading from the input pin
+int previous = LOW;    // the previous reading from the input pin
+
+// the follow variables are long's because the time, measured in miliseconds,
+// will quickly become a bigger number than can be stored in an int.
+unsigned long t = 0;           // the last time the output pin was toggled
+unsigned long debounce = 200UL;   // the debounce time, increase if the output flickers
+
+char *notes[] = {&quot;Do&quot;,&quot;Re&quot;,&quot;Mi&quot;,&quot;Fa&quot;,&quot;Sol&quot;,&quot;La&quot;,&quot;Si&quot;};
+
+void setup()
+{
+  pinMode(0,INPUT);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  reading = digitalRead(0);
+
+  // if the input just went from LOW and HIGH and we've waited long enough
+  // to ignore any noise on the circuit, toggle the output pin and remember
+  // the time
+  if (reading == HIGH &amp;&amp; previous == LOW &amp;&amp; millis() - t &gt; debounce)
+  {
+    if (state == HIGH)
+      state = LOW;
+    else{
+      state = HIGH;
+      Serial.println(notes[random(7)]);
+    }
+
+    t = millis();
+  }
+
+  previous = reading;
+}
+</code></pre></div>
             </div>
         </div>
 
