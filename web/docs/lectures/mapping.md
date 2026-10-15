@@ -1,4 +1,4 @@
-# Mapping and Buying Stuff
+# Mapping, FIltering, and Buying Stuff
 
 ## Mapping Techniques
 

@@ -6,7 +6,7 @@ nav:
         - ' 2. Arduino Programming Basics ' : lectures/arduino.md
         - ' 3. Basic Electronics and Analog Sensors ' : lectures/electronics.md
         - ' 4. Serial and MIDI Communication ' : lectures/communication.md
-        # - ' 5. Mapping and Buying Stuff ' : lectures/mapping.md
+        - ' 5. Mapping, Filtering, and Buying Stuff ' : lectures/mapping.md
         # - ' 6. Sensors ' : lectures/sensors.md
         # - ' 7. Digital Fabrication ' : lectures/fabrication.md
         # - ' 8. Embedded Systems ' : lectures/embedded.md
