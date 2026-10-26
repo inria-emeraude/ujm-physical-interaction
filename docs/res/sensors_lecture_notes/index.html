@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://inria-emeraude.github.io/ujm-physical-interaction/res/sensors_lecture_notes/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Sensors and Sensor Technologies for Musical Interaction - Physical Interaction Design @ UJM</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/color-brewer.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../../extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Physical Interaction Design @ UJM</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Lectures</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../lectures/nime/" class="dropdown-item"> 1. NIME: New Interfaces for Musical Expression </a>
+</li>
+                                    
+<li>
+    <a href="../../lectures/arduino/" class="dropdown-item"> 2. Arduino Programming Basics </a>
+</li>
+                                    
+<li>
+    <a href="../../lectures/electronics/" class="dropdown-item"> 3. Basic Electronics and Analog Sensors </a>
+</li>
+                                    
+<li>
+    <a href="../../lectures/communication/" class="dropdown-item"> 4. Serial and MIDI Communication </a>
+</li>
+                                    
+<li>
+    <a href="../../lectures/mapping/" class="dropdown-item"> 5. Mapping, Filtering, and Buying Stuff </a>
+</li>
+                                    
+<li>
+    <a href="../../lectures/sensors/" class="dropdown-item"> 6. Sensors and Sensor Technology </a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Assignments</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../assignments/random/" class="dropdown-item"> 1. Random Note Generator </a>
+</li>
+                                    
+<li>
+    <a href="../../assignments/hardware/" class="dropdown-item"> 2. Hardware Control </a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://ccrma.stanford.edu/~rmichon/digicrea25/" class="nav-link">Last Year's Projects</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#sensors-and-sensor-technologies-for-musical-interaction" class="nav-link">Sensors and Sensor Technologies for Musical Interaction</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#1-opening-what-counts-as-sensing-08-min" class="nav-link">1. Opening: what counts as sensing? (0–8 min)</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#opening-question" class="nav-link">Opening question</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#working-definition" class="nav-link">Working definition</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#quick-classification-prompt" class="nav-link">Quick classification prompt</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#2-from-physical-event-to-musical-consequence-818-min" class="nav-link">2. From physical event to musical consequence (8–18 min)</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#key-terms" class="nav-link">Key terms</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#the-sensor-is-not-the-gesture" class="nav-link">The sensor is not the gesture</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#discussion-intention-and-ambiguity" class="nav-link">Discussion: intention and ambiguity</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#3-sensor-families-i-contact-force-and-deformation-1843-min" class="nav-link">3. Sensor families I: contact, force, and deformation (18–43 min)</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#31-switches-and-buttons" class="nav-link">3.1 Switches and buttons</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#32-potentiometers-and-rotary-controls" class="nav-link">3.2 Potentiometers and rotary controls</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#33-force-pressure-and-touch" class="nav-link">3.3 Force, pressure, and touch</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#34-bend-stretch-and-deformation" class="nav-link">3.4 Bend, stretch, and deformation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#35-piezoelectric-and-vibration-sensing" class="nav-link">3.5 Piezoelectric and vibration sensing</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#compare-one-musical-intention-several-sensors" class="nav-link">Compare: one musical intention, several sensors</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#4-short-break-and-observation-prompt-4353-min" class="nav-link">4. Short break and observation prompt (43–53 min)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#5-sensor-families-ii-motion-distance-light-sound-and-body-signals-5375-min" class="nav-link">5. Sensor families II: motion, distance, light, sound, and body signals (53–75 min)</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#51-inertial-sensors-accelerometers-and-gyroscopes" class="nav-link">5.1 Inertial sensors: accelerometers and gyroscopes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#52-position-proximity-and-distance" class="nav-link">5.2 Position, proximity, and distance</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#53-cameras-and-computer-vision" class="nav-link">5.3 Cameras and computer vision</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#54-microphones-and-acoustic-sensing" class="nav-link">5.4 Microphones and acoustic sensing</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#55-biosignals-and-physiological-measures" class="nav-link">5.5 Biosignals and physiological measures</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#56-environmental-sensors" class="nav-link">5.6 Environmental sensors</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#6-from-sensor-to-microcontroller-7593-min" class="nav-link">6. From sensor to microcontroller (75–93 min)</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#61-analog-outputs-and-adc-inputs" class="nav-link">6.1 Analog outputs and ADC inputs</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#62-digital-gpio-switches-and-logic-signals" class="nav-link">6.2 Digital GPIO: switches and logic signals</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#63-i2c-a-shared-two-wire-bus" class="nav-link">6.3 I²C: a shared two-wire bus</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#64-spi-a-clocked-higher-throughput-connection" class="nav-link">6.4 SPI: a clocked, higher-throughput connection</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#65-uart-and-other-connections" class="nav-link">6.5 UART and other connections</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#interface-comparison" class="nav-link">Interface comparison</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#keep-the-layers-distinct" class="nav-link">Keep the layers distinct</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#practical-safety-and-documentation-note" class="nav-link">Practical safety and documentation note</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#7-choosing-a-sensor-design-tradeoffs-93105-min" class="nav-link">7. Choosing a sensor: design tradeoffs (93–105 min)</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#questions-to-ask-before-choosing" class="nav-link">Questions to ask before choosing</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#a-practical-comparison-table" class="nav-link">A practical comparison table</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#four-recurring-tradeoffs" class="nav-link">Four recurring tradeoffs</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#short-analysis-more-data-better-instrument" class="nav-link">Short analysis: “More data ≠ better instrument”</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#8-group-design-activity-choose-the-sensing-approach-105117-min" class="nav-link">8. Group design activity: choose the sensing approach (105–117 min)</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#design-briefs" class="nav-link">Design briefs</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#group-task" class="nav-link">Group task</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#debrief-prompts" class="nav-link">Debrief prompts</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#9-closing-the-central-ideas-117120-min" class="nav-link">9. Closing: the central ideas (117–120 min)</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#exit-question" class="nav-link">Exit question</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#optional-examples-and-teaching-materials" class="nav-link">Optional examples and teaching materials</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#simple-in-room-demonstrations" class="nav-link">Simple in-room demonstrations</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#instructor-note-boundaries-with-other-lectures" class="nav-link">Instructor note: boundaries with other lectures</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="sensors-and-sensor-technologies-for-musical-interaction">Sensors and Sensor Technologies for Musical Interaction</h1>
+<h2 id="1-opening-what-counts-as-sensing-08-min">1. Opening: what counts as sensing? (0–8 min)</h2>
+<h3 id="opening-question">Opening question</h3>
+<blockquote>
+<p>When does a movement become a musical control?</p>
+</blockquote>
+<p>Invite students to name examples: pressing a key, bowing a string, tilting a phone, turning a knob, moving a hand in front of a camera, blowing into a microphone, or touching a conductive surface.</p>
+<p>Ask whether all of these are “sensors.” The useful first distinction is that some actions are sensed by a dedicated component, while others are detected through a conventional musical interface or by analyzing an existing signal. A keyboard key may use a switch; a camera tracks visual change; a microphone converts pressure variation in air into an electrical signal. All provide information about a physical event, but they do so through different principles and with different relationships to the player.</p>
+<h3 id="working-definition">Working definition</h3>
+<p>A <strong>sensor</strong> is a device or system that responds to a physical phenomenon and produces a signal that another system can use.</p>
+<p>The phenomenon might be pressure, motion, light, sound, temperature, magnetic field, distance, or a property of the body. A sensor’s output is not the gesture itself. It is a measurable trace from which a system may infer something useful.</p>
+<h3 id="quick-classification-prompt">Quick classification prompt</h3>
+<p>For each example, ask: what physical phenomenon changes, and what does the system observe?</p>
+<table>
+<thead>
+<tr>
+<th>Example</th>
+<th>Physical phenomenon</th>
+<th>Possible observation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Potentiometer knob</td>
+<td>Rotation</td>
+<td>Changing electrical resistance or voltage</td>
+</tr>
+<tr>
+<td>Push button</td>
+<td>Contact / force</td>
+<td>Open or closed circuit</td>
+</tr>
+<tr>
+<td>Accelerometer</td>
+<td>Linear acceleration</td>
+<td>Acceleration along one or more axes</td>
+</tr>
+<tr>
+<td>Camera</td>
+<td>Light arriving at an image sensor</td>
+<td>A changing image or tracked features</td>
+</tr>
+<tr>
+<td>Microphone</td>
+<td>Air pressure variation</td>
+<td>An electrical audio signal</td>
+</tr>
+</tbody>
+</table>
+<p>Emphasize that “sensor” can refer to a component, a module, or a larger sensing system. A camera plus computer-vision software, for example, is a sensing system even though the camera alone does not identify a hand gesture.</p>
+<hr />
+<h2 id="2-from-physical-event-to-musical-consequence-818-min">2. From physical event to musical consequence (8–18 min)</h2>
+<p>Introduce the chain below. It helps students avoid treating a sensor reading as if it already had musical meaning.</p>
+<pre><code class="language-text">physical event → transduction → signal → interpretation → musical consequence
+     press       force sensor    value     “how hard?”     louder / brighter
+</code></pre>
+<h3 id="key-terms">Key terms</h3>
+<ul>
+<li><strong>Physical event:</strong> Something happens in the world: a surface is pressed, a body turns, a string vibrates.</li>
+<li><strong>Transduction:</strong> A sensor converts one kind of physical change into another form, commonly an electrical signal.</li>
+<li><strong>Signal:</strong> The changing value made available to the system. It may be continuous, discrete, or a stream of images or samples.</li>
+<li><strong>Interpretation:</strong> The system decides what the signal means in context. Is a hand approaching? Is a pressure change intentional? Has a gesture started or ended?</li>
+<li><strong>Musical consequence:</strong> The sound or behavior affected by the interpreted signal: triggering a note, changing timbre, moving a sound in space, or selecting a mode.</li>
+</ul>
+<h3 id="the-sensor-is-not-the-gesture">The sensor is not the gesture</h3>
+<p>The same sensor reading can have different meanings in different instruments. A rising accelerometer value may mean “increase brightness,” “move the sound upward,” “select the next sound,” or nothing at all. A camera may detect a hand, but it cannot determine whether the hand is performing, resting, or accidentally crossing the frame without additional design choices.</p>
+<p>Likewise, the same gesture can be sensed in different ways. A performer’s bending motion might be captured with a flex sensor, a camera, an inertial sensor attached to the body, or a distance sensor observing the limb. Each option affords a different playing posture and produces different data.</p>
+<h3 id="discussion-intention-and-ambiguity">Discussion: intention and ambiguity</h3>
+<p>Ask students:</p>
+<ol>
+<li>If a performer shakes a controller, how could the system distinguish an intentional gesture from an accidental bump?</li>
+<li>If a hand is visible to a camera, what else would the system need to know before deciding what the hand is doing?</li>
+<li>Is ambiguity always a problem, or can it be musically useful?</li>
+</ol>
+<p>The goal is not to eliminate ambiguity at all costs. Ambiguous or unstable behavior can be part of an instrument’s character, but it should be a deliberate design choice. The performer needs to be able to learn the relationship and decide how to use it.</p>
+<hr />
+<h2 id="3-sensor-families-i-contact-force-and-deformation-1843-min">3. Sensor families I: contact, force, and deformation (18–43 min)</h2>
+<p>These sensors detect events at or near a physical interface. They are often easy to understand because the performer can see and feel the contact that produces the signal.</p>
+<h3 id="31-switches-and-buttons">3.1 Switches and buttons</h3>
+<p>A switch reports a small number of states, often open/closed or on/off. A button can trigger a note, change a mode, select a sound bank, or confirm an action.</p>
+<p><strong>Musical qualities:</strong> clear onset, strong causal relationship, easy to learn, useful for discrete events.</p>
+<p><strong>Questions and limitations:</strong> Is the button easy to reach while playing? Does it require too much force? Can it be triggered accidentally? Does its binary behavior fit the musical idea, or is continuous control needed?</p>
+<p>Switches include familiar keys and buttons, but also magnetic reed switches, microswitches, and contacts made from conductive materials. A switch is a sensor even when it is built into a larger control such as a keyboard key.</p>
+<h3 id="32-potentiometers-and-rotary-controls">3.2 Potentiometers and rotary controls</h3>
+<p>A rotary potentiometer converts the rotation of a shaft into a changing electrical value. A slider potentiometer does the same for linear motion. They are common in knobs, faders, and simple controllers.</p>
+<p><strong>Musical qualities:</strong> continuous value, visible position, direct manual control; especially useful for parameters such as level, cutoff, or blend.</p>
+<p><strong>Questions and limitations:</strong> Does the control have a useful physical range? Can the performer find it without looking? Is a knob appropriate for a parameter that changes quickly? What happens when the control reaches its limit?</p>
+<p>Other rotary technologies include encoders, which report movement in steps and can often turn indefinitely. Unlike a potentiometer, an encoder may not have a physical position that corresponds to the parameter’s current value. That can be useful for selecting values or navigating menus, but it changes how the control communicates state.</p>
+<h3 id="33-force-pressure-and-touch">3.3 Force, pressure, and touch</h3>
+<p>Pressure-sensitive components respond to force or pressure. Examples include force-sensitive resistors, pressure pads, load cells, capacitive touch surfaces, and pressure sensors in air or fluid systems.</p>
+<p><strong>Musical qualities:</strong> continuous or graded control; can link touch intensity to dynamics, brightness, articulation, or density; can support playing across a surface rather than pressing a conventional button.</p>
+<p><strong>Questions and limitations:</strong> Is pressure measured consistently across the surface? Does the player need tactile feedback? Can the sensor distinguish a light touch from a firm press? How will the interaction work with gloves, sweat, or different hand sizes?</p>
+<p>Touch is not the same as force. A capacitive surface can detect a finger’s presence without measuring how hard it presses. A pressure sensor may measure force but may not know where on a broad surface the force occurred. Choosing between them depends on the intended musical action.</p>
+<h3 id="34-bend-stretch-and-deformation">3.4 Bend, stretch, and deformation</h3>
+<p>Flex sensors, stretch sensors, bend-sensitive materials, and conductive textiles change their electrical properties as they deform. They can be attached to gloves, fabric, soft objects, or flexible structures.</p>
+<p><strong>Musical qualities:</strong> can make the body or a soft object part of the interface; can follow continuous deformation; can support unusual postures and tactile forms.</p>
+<p><strong>Questions and limitations:</strong> Is the sensor measuring the intended movement, or also nearby movement? Does it return to the same value after repeated bending? Is it comfortable and robust when worn? How should the performer calibrate it?</p>
+<h3 id="35-piezoelectric-and-vibration-sensing">3.5 Piezoelectric and vibration sensing</h3>
+<p>Piezoelectric materials produce an electrical response when they are bent, struck, or vibrated. They are often used as contact microphones, impact sensors, or pickups attached to surfaces.</p>
+<p><strong>Musical qualities:</strong> can detect taps, impacts, vibration, and onset details; can turn an object’s material resonance into part of the instrument; small and easy to attach.</p>
+<p><strong>Questions and limitations:</strong> A piezo element is sensitive to how and where it is mounted. It may respond strongly to impacts and vibrations, but it is not automatically a precise measure of sustained force. It can pick up unwanted knocks or stage vibration.</p>
+<h3 id="compare-one-musical-intention-several-sensors">Compare: one musical intention, several sensors</h3>
+<p>Suppose a performer wants to control the brightness of a sound while bending a finger.</p>
+<ul>
+<li>A <strong>flex sensor</strong> attached to the finger measures bending, but it affects comfort and may need calibration.</li>
+<li>A <strong>camera</strong> can observe the finger without attaching a sensor, but needs a clear view and may be affected by lighting or occlusion.</li>
+<li>An <strong>inertial sensor</strong> on the hand measures motion, but may not isolate one finger’s bend.</li>
+<li>A <strong>pressure surface</strong> could capture a related expressive action, such as squeezing, but changes the gesture itself.</li>
+</ul>
+<p>There is no universally best sensor. The choice changes the performer’s action, not just the data format.</p>
+<hr />
+<h2 id="4-short-break-and-observation-prompt-4353-min">4. Short break and observation prompt (43–53 min)</h2>
+<p>Ask students to look around the room or at objects they have with them. Identify one object that senses something and one that actuates or changes something. What would change if the same object were used as a musical interface?</p>
+<p>Examples might include a phone touchscreen, a laptop trackpad, a game controller, a door handle, a smartwatch, or a wireless earbud.</p>
+<hr />
+<h2 id="5-sensor-families-ii-motion-distance-light-sound-and-body-signals-5375-min">5. Sensor families II: motion, distance, light, sound, and body signals (53–75 min)</h2>
+<h3 id="51-inertial-sensors-accelerometers-and-gyroscopes">5.1 Inertial sensors: accelerometers and gyroscopes</h3>
+<p>An <strong>accelerometer</strong> measures acceleration. In practice, this can provide information about tilt relative to gravity, movement, vibration, or impacts. A <strong>gyroscope</strong> measures rotational speed. Devices often combine several axes of these sensors in a small inertial measurement unit (IMU); some also include a magnetometer, which senses magnetic field direction.</p>
+<p><strong>Musical qualities:</strong> compact, wearable, and usable without a camera; can follow handheld objects or body parts; useful for tilt, shake, rotation, and movement intensity.</p>
+<p><strong>Questions and limitations:</strong> The sensor measures motion, not a musical gesture category. Stillness, drift, orientation, and attachment position matter. A sensor on the wrist cannot necessarily distinguish wrist rotation from movement of the whole arm.</p>
+<p>Ask: what does an “up” direction mean if the instrument rotates? How could a performer reset or calibrate their position? Would a noisy but responsive signal be better for a particular sound than a very stable one?</p>
+<h3 id="52-position-proximity-and-distance">5.2 Position, proximity, and distance</h3>
+<p>Distance and proximity sensors detect whether something is nearby or how far away it is. Technologies include infrared, ultrasonic, optical time-of-flight, and radar sensing. They differ in range, field of view, accuracy, response, and sensitivity to environmental conditions.</p>
+<p><strong>Musical qualities:</strong> support contact-free interaction; can make movement through space part of an instrument; useful for approach, withdrawal, and spatial control.</p>
+<p><strong>Questions and limitations:</strong> What objects are detected? How broad is the sensing region? Can two hands be distinguished? Does the system behave differently under sunlight, in a reflective room, or with multiple performers nearby?</p>
+<h3 id="53-cameras-and-computer-vision">5.3 Cameras and computer vision</h3>
+<p>A camera measures patterns of light over an image. Software can track image features, color regions, markers, body joints, hands, or objects. Depth cameras add distance information for pixels or regions in the image.</p>
+<p><strong>Musical qualities:</strong> capture detailed movement without requiring a wearable sensor; can observe several performers or large gestures; supports visual feedback and audience-visible interaction.</p>
+<p><strong>Questions and limitations:</strong> The camera needs a view of the performer. Lighting, background, clothing, occlusion, and camera position affect what can be detected. A system may track a body part without knowing its intention. The performer may need to adapt to a designated stage area or keep certain movements visible.</p>
+<p>Consider the difference between “the system sees the hand” and “the system understands the gesture.” The latter depends on tracking, interpretation, training examples, and the conditions in which the system is used.</p>
+<h3 id="54-microphones-and-acoustic-sensing">5.4 Microphones and acoustic sensing</h3>
+<p>A microphone converts changes in air pressure into an electrical signal. It may be used to capture voice or an instrument, but also to detect claps, taps, breath, environmental events, or the acoustic response of an object.</p>
+<p><strong>Musical qualities:</strong> sound itself can become the control signal; supports voice, breath, and acoustic gestures; can avoid adding a visible control surface.</p>
+<p><strong>Questions and limitations:</strong> The microphone may hear the loudspeakers as well as the performer. Room acoustics, noise, distance, and feedback can influence the signal. A microphone does not automatically separate one intended sound from everything else.</p>
+<h3 id="55-biosignals-and-physiological-measures">5.5 Biosignals and physiological measures</h3>
+<p>Some systems measure signals from the body, such as muscle activity (EMG), heart activity (ECG), or brain activity (EEG). These approaches can be compelling, but their outputs are often subtle, variable, and highly dependent on contact, placement, movement, and interpretation.</p>
+<p><strong>Musical qualities:</strong> can explore exertion, tension, breath, or physiological change as part of performance; may support interactions where conventional movement is limited.</p>
+<p><strong>Questions and limitations:</strong> Is the signal reliable enough for the intended performance? Is the setup comfortable and repeatable? Does the system make a defensible claim about what is being measured? A biosignal should not be treated as a transparent readout of emotion or intention.</p>
+<h3 id="56-environmental-sensors">5.6 Environmental sensors</h3>
+<p>Light, temperature, humidity, air quality, and other environmental measures can influence a musical system. They may respond slowly, which can be appropriate for installations or evolving compositions but less useful for fast control gestures.</p>
+<p>Ask whether the audience or performer should be able to perceive the connection between the environment and the sound. A change in room temperature that slowly alters a soundscape may make sense in an installation; it may be a poor choice for triggering a precisely timed note.</p>
+<hr />
+<h2 id="6-from-sensor-to-microcontroller-7593-min">6. From sensor to microcontroller (75–93 min)</h2>
+<p>The sensing principle describes what physical quantity changes. The sensor’s <strong>electrical interface</strong> describes how that change becomes available to a microcontroller. Two sensors measuring the same thing, such as distance, may use different interfaces: one may provide an analog voltage, while another may contain its own conversion electronics and communicate digitally over I²C or SPI.</p>
+<pre><code class="language-text">physical quantity → sensing element / module → electrical signal or data protocol
+       pressure              sensor                    voltage / GPIO / I²C / SPI
+                                                        ↓
+                                                microcontroller input
+</code></pre>
+<p>This is a useful bridge between choosing a sensor and programming an instrument. The connection affects what hardware is needed, how many pins are used, how quickly values can be read, and how much circuitry or software is involved. The protocol does not determine the musical meaning of the signal; interpretation and mapping come afterward.</p>
+<h3 id="61-analog-outputs-and-adc-inputs">6.1 Analog outputs and ADC inputs</h3>
+<p>An analog sensor produces a continuously varying electrical quantity, commonly a voltage. A microcontroller’s analog-to-digital converter (ADC) samples that voltage and represents it as a number. A potentiometer used as a voltage divider is a familiar example: turning the shaft changes the voltage at its output, and the ADC converts that voltage into a digital value.</p>
+<p>Some sensors do not directly output a voltage. A thermistor or a force-sensitive resistor, for example, changes its resistance. It needs a suitable circuit, often a voltage divider, before its state can be read by an ADC. Other analog sensors need amplification or filtering. The sensor’s datasheet and the microcontroller’s input range determine how to connect it safely.</p>
+<p><strong>Useful properties:</strong> simple, direct, and common for continuous controls such as potentiometers, light-dependent resistors, and many force or flex sensors.</p>
+<p><strong>Things to check:</strong></p>
+<ul>
+<li>The microcontroller’s maximum input voltage. A 5 V signal can damage a 3.3 V-only input.</li>
+<li>ADC resolution and input range. These affect how finely a voltage is represented, but do not guarantee that the sensor itself is precise or stable.</li>
+<li>Whether the signal needs conditioning, such as a divider, amplifier, or filter.</li>
+<li>How many ADC channels are available and whether the required pins are already used by other hardware.</li>
+</ul>
+<h3 id="62-digital-gpio-switches-and-logic-signals">6.2 Digital GPIO: switches and logic signals</h3>
+<p>A digital input reads one of a small number of logic states, usually interpreted as LOW or HIGH. A push button or limit switch can be read this way. Many microcontrollers also provide internal pull-up or pull-down resistors so an unpressed switch has a stable default state rather than a floating input.</p>
+<p>Digital does not always mean “a sensor with a data protocol.” A simple switch can connect directly to a GPIO pin, while a digital sensor module may send structured data over I²C or SPI. A switch can also produce rapid transitions as its contacts settle, called <strong>contact bounce</strong>; software or hardware debouncing prevents one press from being interpreted as several.</p>
+<p>Some sensors communicate through pulse timing or frequency rather than a voltage level or a multi-wire bus. An ultrasonic distance module, for example, may signal a measurement using the duration of a pulse. In that case, the microcontroller measures timing on a GPIO pin.</p>
+<h3 id="63-i2c-a-shared-two-wire-bus">6.3 I²C: a shared two-wire bus</h3>
+<p>I²C (Inter-Integrated Circuit) is a serial communication bus commonly used for small sensors and control chips. It uses two signal wires: <strong>SDA</strong> for data and <strong>SCL</strong> for the clock, in addition to power and ground. A controller can communicate with several devices on the same bus, typically selecting each device by its address.</p>
+<p><strong>Useful properties:</strong> only two signal wires are needed; multiple addressed devices can share the bus; many small sensor breakout boards support it.</p>
+<p><strong>Things to check:</strong> devices need compatible logic voltage and addresses; some boards have fixed or configurable addresses; cable length and bus speed are limited by electrical properties of the bus. I²C is common for sensors such as accelerometers, gyroscopes, magnetometers, environmental sensors, and small displays.</p>
+<h3 id="64-spi-a-clocked-higher-throughput-connection">6.4 SPI: a clocked, higher-throughput connection</h3>
+<p>SPI (Serial Peripheral Interface) is another common serial interface. A typical connection uses <strong>SCLK</strong> (clock), <strong>MOSI</strong> (controller-to-device data), <strong>MISO</strong> (device-to-controller data), and a <strong>chip-select</strong> line for each device. It often supports faster data transfer than I²C, and can be useful for sensors that produce larger or faster streams of data.</p>
+<p><strong>Useful properties:</strong> high throughput, straightforward full-duplex transfers in common configurations, and no device-address negotiation on the bus.</p>
+<p><strong>Things to check:</strong> it uses more signal wires, usually needs a separate chip-select line per device, and the sensor and microcontroller must agree on clock mode and maximum speed. SPI is common for fast motion sensors, displays, and memory devices.</p>
+<h3 id="65-uart-and-other-connections">6.5 UART and other connections</h3>
+<p>UART is an asynchronous serial connection using a transmit line (TX) and receive line (RX), plus a shared ground. It is common for GPS modules, some sensor boards, and communication between a microcontroller and another device. Unlike I²C and SPI, a basic UART connection does not share a clock wire; both ends must be configured for the same data rate and format.</p>
+<p>Other interfaces include one-wire buses, CAN, and USB. These may be useful in particular systems, but the central design question remains the same: what signal does the sensor provide, and what does the microcontroller need in order to read it reliably? USB is more often used to connect a microcontroller or sensor interface to a computer than to connect a bare sensing element directly to a microcontroller pin.</p>
+<h3 id="interface-comparison">Interface comparison</h3>
+<table>
+<thead>
+<tr>
+<th>Sensor output / interface</th>
+<th>Typical example</th>
+<th>Connection idea</th>
+<th>Main advantage</th>
+<th>Main consideration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Analog voltage</td>
+<td>Potentiometer, some light or force sensors</td>
+<td>Signal to ADC input</td>
+<td>Direct continuous value</td>
+<td>Voltage range, ADC channels, and possible signal conditioning</td>
+</tr>
+<tr>
+<td>Resistance change</td>
+<td>Thermistor, force-sensitive resistor</td>
+<td>Divider or conditioning circuit, then ADC</td>
+<td>Simple sensing element</td>
+<td>The element alone may not provide a readable voltage</td>
+</tr>
+<tr>
+<td>Digital GPIO</td>
+<td>Button, switch</td>
+<td>Logic input pin</td>
+<td>Simple discrete state</td>
+<td>Pull-up/down and contact bounce</td>
+</tr>
+<tr>
+<td>Pulse timing / frequency</td>
+<td>Ultrasonic range module, pulse sensor</td>
+<td>GPIO plus timer/capture</td>
+<td>Encodes timing or rate</td>
+<td>The program must measure pulse width or frequency</td>
+</tr>
+<tr>
+<td>I²C</td>
+<td>Many compact motion/environment sensors</td>
+<td>SDA + SCL bus</td>
+<td>Two signal wires; multiple addressed devices</td>
+<td>Address conflicts, bus speed, wiring and voltage compatibility</td>
+</tr>
+<tr>
+<td>SPI</td>
+<td>Faster motion sensors, displays</td>
+<td>Clock + data lines + chip select</td>
+<td>High data throughput</td>
+<td>More wires and device-specific configuration</td>
+</tr>
+<tr>
+<td>UART</td>
+<td>GPS or serial sensor module</td>
+<td>TX + RX</td>
+<td>Simple point-to-point serial data</td>
+<td>Both ends must use matching settings</td>
+</tr>
+</tbody>
+</table>
+<h3 id="keep-the-layers-distinct">Keep the layers distinct</h3>
+<p>For any example, ask students to identify three separate things:</p>
+<ol>
+<li><strong>What physical quantity is sensed?</strong> For example, acceleration, pressure, light, or temperature.</li>
+<li><strong>How does the sensor communicate it?</strong> Analog voltage, switch state, pulse timing, I²C, SPI, or UART.</li>
+<li><strong>What does the musical instrument do with the reading?</strong> Trigger a sound, alter a parameter, classify a gesture, or control a spatial trajectory.</li>
+</ol>
+<p>These layers can vary independently. An accelerometer is a sensing technology; I²C or SPI is a way of transferring its readings. A potentiometer is a rotary control; an ADC is how a microcontroller turns its voltage into a number. A digital reading is not automatically more accurate, and a higher-resolution ADC does not by itself make a more playable instrument.</p>
+<h3 id="practical-safety-and-documentation-note">Practical safety and documentation note</h3>
+<p>Before connecting a sensor, check its supply voltage, output voltage, pin labels, and interface in the datasheet or module documentation. Sensor boards that look similar may require different voltages or wiring. In the course’s Teensy examples, the board’s input-voltage limits and pins already used by the audio shield matter. The electronics lecture develops the actual circuits and connection procedures.</p>
+<hr />
+<h2 id="7-choosing-a-sensor-design-tradeoffs-93105-min">7. Choosing a sensor: design tradeoffs (93–105 min)</h2>
+<p>Present sensor selection as a design question about the interaction, rather than a shopping question about component specifications.</p>
+<h3 id="questions-to-ask-before-choosing">Questions to ask before choosing</h3>
+<ol>
+<li><strong>What physical action should matter?</strong> Touch, pressure, rotation, vibration, movement through space, breath, or a change in the environment?</li>
+<li><strong>What should the performer feel?</strong> Contact, resistance, weight, texture, freedom of movement, or no physical object at all?</li>
+<li><strong>What kind of control is needed?</strong> A discrete trigger, a continuous value, a position, a direction, a gesture category, or a combination?</li>
+<li><strong>Where is the interaction taking place?</strong> At a desk, on a stage, in a gallery, in a crowded room, or while moving around?</li>
+<li><strong>What should the audience be able to understand?</strong> Is the causal link visible, or is hidden sensing part of the intended experience?</li>
+<li><strong>What can go wrong in use?</strong> Occlusion, drift, accidental touches, background noise, fragile attachments, inconsistent calibration, or restricted movement?</li>
+<li><strong>How will the performer learn and control it?</strong> Is feedback provided? Can the performer predict the result and recover from errors?</li>
+</ol>
+<h3 id="a-practical-comparison-table">A practical comparison table</h3>
+<table>
+<thead>
+<tr>
+<th>Sensor family</th>
+<th>What it can observe</th>
+<th>Typical interaction</th>
+<th>Common design concern</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Switch / button</td>
+<td>Contact state</td>
+<td>Trigger or selection</td>
+<td>Accidental activation; limited states</td>
+</tr>
+<tr>
+<td>Potentiometer / encoder</td>
+<td>Rotation or position</td>
+<td>Knob, slider, navigation</td>
+<td>Physical range and visible state</td>
+</tr>
+<tr>
+<td>Force / pressure / touch</td>
+<td>Contact, force, or finger presence</td>
+<td>Pressing, squeezing, touching</td>
+<td>Force is not the same as touch; feedback and consistency</td>
+</tr>
+<tr>
+<td>Flex / stretch</td>
+<td>Deformation</td>
+<td>Bending a wearable or soft object</td>
+<td>Comfort, durability, calibration</td>
+</tr>
+<tr>
+<td>Piezo / vibration</td>
+<td>Impact or vibration</td>
+<td>Striking, scraping, listening to an object</td>
+<td>Mounting, unwanted vibration, poor sustained-force measurement</td>
+</tr>
+<tr>
+<td>Accelerometer / gyroscope</td>
+<td>Linear and rotational motion</td>
+<td>Tilt, shake, rotation, movement</td>
+<td>Orientation, attachment, drift, ambiguity</td>
+</tr>
+<tr>
+<td>Proximity / distance</td>
+<td>Nearby object or distance</td>
+<td>Hovering, approach, spatial movement</td>
+<td>Field of view, range, environment, multiple objects</td>
+</tr>
+<tr>
+<td>Camera / depth camera</td>
+<td>Image features, body parts, distance</td>
+<td>Full-body or hand movement</td>
+<td>Visibility, lighting, occlusion, interpretation</td>
+</tr>
+<tr>
+<td>Microphone</td>
+<td>Sound pressure</td>
+<td>Voice, breath, taps, acoustic events</td>
+<td>Background sound and feedback</td>
+</tr>
+<tr>
+<td>Biosignal sensor</td>
+<td>Electrical or physiological activity</td>
+<td>Muscle or body-related control</td>
+<td>Contact quality, variability, interpretation claims</td>
+</tr>
+</tbody>
+</table>
+<h3 id="four-recurring-tradeoffs">Four recurring tradeoffs</h3>
+<ul>
+<li><strong>Contact versus freedom:</strong> A wearable or attached sensor can be close to the body, but may restrict movement or change the performer’s technique. Contact-free sensing allows freedom but may constrain the performer to a sensing area.</li>
+<li><strong>Precision versus expressiveness:</strong> A highly stable control can be useful for accurate parameter setting. A more variable signal can create rich, responsive behavior when the performer can shape it musically.</li>
+<li><strong>Visibility versus hidden sensing:</strong> A visible knob or gesture can help the audience understand cause and effect. Hidden sensing can create surprise, but may make the performance harder to read.</li>
+<li><strong>Rich data versus playable control:</strong> More measured dimensions do not automatically make a better instrument. A small number of well-designed controls can be more expressive and learnable than many poorly connected measurements.</li>
+</ul>
+<h3 id="short-analysis-more-data-better-instrument">Short analysis: “More data ≠ better instrument”</h3>
+<p>Invite students to imagine two controllers:</p>
+<ul>
+<li>Controller A senses one pressure value with an obvious and repeatable connection to the sound.</li>
+<li>Controller B uses a camera to extract many body landmarks, but the relationship between movement and sound is difficult to predict.</li>
+</ul>
+<p>Which is more expressive? There is no universal answer. Ask what kind of music, performer, rehearsal process, and audience experience each design supports. Expression depends on the instrument’s possible actions, feedback, and learnability, not simply on the number of sensor channels.</p>
+<hr />
+<h2 id="8-group-design-activity-choose-the-sensing-approach-105117-min">8. Group design activity: choose the sensing approach (105–117 min)</h2>
+<p>Divide the class into small groups. Give each group one design brief, or let them select one.</p>
+<h3 id="design-briefs">Design briefs</h3>
+<ol>
+<li><strong>A wearable sound controller:</strong> A performer wants to change timbre through a slow, continuous hand gesture while keeping both feet free.</li>
+<li><strong>An object instrument:</strong> A wooden object should produce different sounds when tapped, rubbed, squeezed, or tilted.</li>
+<li><strong>A spatial performance:</strong> A performer wants to move a sound source around an audience without touching a controller.</li>
+<li><strong>A breath instrument:</strong> A performer wants to shape a sustained sound with breathing while also triggering discrete events.</li>
+</ol>
+<h3 id="group-task">Group task</h3>
+<p>For each brief, students have 8 minutes to sketch a sensing design and 4 minutes for quick reports. Their sketch should include:</p>
+<ul>
+<li>the physical action to be sensed;</li>
+<li>one primary sensor family and one alternative;</li>
+<li>what the sensor actually measures;</li>
+<li>how its output could reach a microcontroller (for example, an ADC input, digital pin, I²C, or SPI);</li>
+<li>the musical parameter or event that could be controlled;</li>
+<li>one likely failure or ambiguity;</li>
+<li>a way to make the interaction learnable and playable.</li>
+</ul>
+<p>Encourage students to draw the performer and sensor placement, not just a block diagram. Ask them to show what the performer does, what the system detects, and what sound changes.</p>
+<h3 id="debrief-prompts">Debrief prompts</h3>
+<ul>
+<li>Did the chosen sensor preserve or change the performer’s gesture?</li>
+<li>What could be confused with an intentional action?</li>
+<li>What information did the group decide not to measure?</li>
+<li>How would the performer know that the system detected the action?</li>
+<li>Would the design work on stage, or only in a controlled classroom?</li>
+</ul>
+<hr />
+<h2 id="9-closing-the-central-ideas-117120-min">9. Closing: the central ideas (117–120 min)</h2>
+<p>Return to the opening question: when does a movement become a musical control?</p>
+<p>Summarize:</p>
+<ol>
+<li>A sensor converts a physical phenomenon into a signal; it does not directly reveal intention.</li>
+<li>Sensor technologies differ in what they can observe and in the actions they ask of the performer.</li>
+<li>The same gesture can be sensed in many ways, and each way changes the instrument’s feel and constraints.</li>
+<li>A good sensor choice begins with the desired interaction and musical behavior.</li>
+<li>Sensor selection includes both the physical sensing principle and the electrical interface to the microcontroller.</li>
+<li>A playable instrument needs a learnable relationship between action, feedback, and sound; more data alone does not provide that relationship.</li>
+</ol>
+<h3 id="exit-question">Exit question</h3>
+<blockquote>
+<p>Name one gesture you would like to use in a musical instrument. What physical phenomenon could be sensed, and what would your first sensor choice make easy or difficult?</p>
+</blockquote>
+<hr />
+<h2 id="optional-examples-and-teaching-materials">Optional examples and teaching materials</h2>
+<p>Use these as demonstrations, short viewing/listening examples, or follow-up reading. They are optional; the lecture can be delivered without access to additional hardware.</p>
+<ul>
+<li><a href="https://inria-emeraude.github.io/ujm-physical-interaction/">Course overview: Physical Interaction Design @ UJM</a></li>
+<li><a href="https://inria-emeraude.github.io/ujm-physical-interaction/lectures/nime/">NIME: New Interfaces for Musical Expression</a>, including the course’s slides on <a href="https://inria-emeraude.github.io/ujm-physical-interaction/res/gesture_capture_lecture.pdf">Technologies for Capturing Musical Gestures</a></li>
+<li><a href="https://inria-emeraude.github.io/ujm-physical-interaction/lectures/electronics/">Basic Electronics and Analog Sensors</a>: potentiometer and button examples, intended for the later practical electronics session</li>
+<li><a href="https://inria-emeraude.github.io/ujm-physical-interaction/lectures/mapping/">Mapping, Filtering, and Buying Stuff</a>: follow-up on sensor ranges and filtering</li>
+<li><a href="https://www.nime.org/">NIME conference</a>: examples of new interfaces and musical instruments</li>
+<li><a href="https://gramophone.inria.fr/">Gramophone project</a>: an example of a musical installation using motion sensors, buttons, and potentiometers to control sound</li>
+</ul>
+<h3 id="simple-in-room-demonstrations">Simple in-room demonstrations</h3>
+<p>If objects are available, show a potentiometer, button, phone, microphone, and one motion or touch sensor. For each, have students identify the sensed phenomenon before naming the component. A phone can illustrate how several sensor families may coexist in one object (touchscreen, accelerometer, gyroscope, camera, microphone), while still requiring software to interpret their outputs.</p>
+<h3 id="instructor-note-boundaries-with-other-lectures">Instructor note: boundaries with other lectures</h3>
+<p>This class introduces sensing principles, common microcontroller interfaces, and interaction design. The existing electronics lecture can develop how to connect a potentiometer or button to a Teensy, while the mapping lecture can address range adjustment and smoothing. Camera-based capture, gesture recognition, and AI can be introduced here as broader sensing systems, then treated in more depth in their relevant sessions or project work.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
