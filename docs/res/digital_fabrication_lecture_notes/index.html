@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://inria-emeraude.github.io/ujm-physical-interaction/res/digital_fabrication_lecture_notes/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Digital Fabrication for Musical Interfaces and Instruments - Physical Interaction Design @ UJM</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/color-brewer.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../../extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Physical Interaction Design @ UJM</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Lectures</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../lectures/nime/" class="dropdown-item"> 1. NIME: New Interfaces for Musical Expression </a>
+</li>
+                                    
+<li>
+    <a href="../../lectures/arduino/" class="dropdown-item"> 2. Arduino Programming Basics </a>
+</li>
+                                    
+<li>
+    <a href="../../lectures/electronics/" class="dropdown-item"> 3. Basic Electronics and Analog Sensors </a>
+</li>
+                                    
+<li>
+    <a href="../../lectures/communication/" class="dropdown-item"> 4. Serial and MIDI Communication </a>
+</li>
+                                    
+<li>
+    <a href="../../lectures/mapping/" class="dropdown-item"> 5. Mapping, Filtering, and Buying Stuff </a>
+</li>
+                                    
+<li>
+    <a href="../../lectures/sensors/" class="dropdown-item"> 6. Sensors and Sensor Technology </a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Assignments</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../assignments/random/" class="dropdown-item"> 1. Random Note Generator </a>
+</li>
+                                    
+<li>
+    <a href="../../assignments/hardware/" class="dropdown-item"> 2. Hardware Control </a>
+</li>
+                                    
+<li>
+    <a href="../../assignments/final-proj/" class="dropdown-item"> 4. Final Project Prep </a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://ccrma.stanford.edu/~rmichon/digicrea25/" class="nav-link">Last Year's Projects</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#digital-fabrication-for-musical-interfaces-and-instruments" class="nav-link">Digital Fabrication for Musical Interfaces and Instruments</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#lecture-at-a-glance" class="nav-link">Lecture at a glance</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#learning-objectives" class="nav-link">Learning objectives</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#suggested-two-hour-plan" class="nav-link">Suggested two-hour plan</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1-opening-what-does-fabrication-add-to-an-instrument-08-min" class="nav-link">1. Opening: what does fabrication add to an instrument? (0–8 min)</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#opening-question" class="nav-link">Opening question</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#three-roles-for-fabrication-in-this-course" class="nav-link">Three roles for fabrication in this course</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#prompt" class="nav-link">Prompt</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#2-three-ways-to-shape-material-818-min" class="nav-link">2. Three ways to shape material (8–18 min)</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#discussion-choose-the-process-after-the-object" class="nav-link">Discussion: choose the process after the object</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#3-3d-printing-technologies-1842-min" class="nav-link">3. 3D printing technologies (18–42 min)</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#31-material-extrusion-fff-fdm" class="nav-link">3.1 Material extrusion: FFF / FDM</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#32-vat-photopolymerization-sla-dlp-and-msla" class="nav-link">3.2 Vat photopolymerization: SLA, DLP, and MSLA</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#33-powder-bed-fusion-sls-and-metal-processes" class="nav-link">3.3 Powder bed fusion: SLS and metal processes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#34-other-additive-processes" class="nav-link">3.4 Other additive processes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#35-choosing-a-printing-process" class="nav-link">3.5 Choosing a printing process</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#4-cad-and-design-for-fabrication-4254-min" class="nav-link">4. CAD and design for fabrication (42–54 min)</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#41-cad-is-a-design-space-not-just-a-drawing-tool" class="nav-link">4.1 CAD is a design space, not just a drawing tool</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#42-design-for-assembly-and-play" class="nav-link">4.2 Design for assembly and play</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#discussion-why-not-print-the-whole-instrument-as-one-part" class="nav-link">Discussion: why not print the whole instrument as one part?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#5-short-break-5464-min" class="nav-link">5. Short break (54–64 min)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#6-from-3d-cad-to-slicer-to-printer-6479-min" class="nav-link">6. From 3D CAD to slicer to printer (64–79 min)</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#61-the-workflow" class="nav-link">6.1 The workflow</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#62-typical-file-handoff" class="nav-link">6.2 Typical file handoff</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#63-what-the-slicer-controls" class="nav-link">6.3 What the slicer controls</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#64-inspect-before-printing" class="nav-link">6.4 Inspect before printing</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#65-after-printing" class="nav-link">6.5 After printing</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#7-cnc-routing-and-cam-7994-min" class="nav-link">7. CNC routing and CAM (79–94 min)</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#71-what-a-cnc-router-does" class="nav-link">7.1 What a CNC router does</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#72-design-consequences" class="nav-link">7.2 Design consequences</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#73-cad-to-cam-workflow" class="nav-link">7.3 CAD-to-CAM workflow</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#74-software-examples" class="nav-link">7.4 Software examples</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#8-laser-cutting-and-other-sheet-processes-94108-min" class="nav-link">8. Laser cutting and other sheet processes (94–108 min)</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#81-laser-cutting" class="nav-link">8.1 Laser cutting</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#82-typical-laser-workflow" class="nav-link">8.2 Typical laser workflow</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#83-other-useful-digital-fabrication-processes" class="nav-link">8.3 Other useful digital fabrication processes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#84-hybrid-construction" class="nav-link">8.4 Hybrid construction</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#9-design-exercise-fabricate-a-musical-controller-108116-min" class="nav-link">9. Design exercise: fabricate a musical controller (108–116 min)</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#brief" class="nav-link">Brief</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#group-task" class="nav-link">Group task</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#debrief-questions" class="nav-link">Debrief questions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#10-summary-and-exit-question-116120-min" class="nav-link">10. Summary and exit question (116–120 min)</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#key-ideas" class="nav-link">Key ideas</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#exit-question" class="nav-link">Exit question</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#software-and-references" class="nav-link">Software and references</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#instructor-note-on-machine-safety" class="nav-link">Instructor note on machine safety</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="digital-fabrication-for-musical-interfaces-and-instruments">Digital Fabrication for Musical Interfaces and Instruments</h1>
+<h2 id="lecture-at-a-glance">Lecture at a glance</h2>
+<ul>
+<li><strong>Course:</strong> Physical Interaction Design @ UJM</li>
+<li><strong>Duration:</strong> 2 hours</li>
+<li><strong>Audience:</strong> Master’s students in music, sound, design, and creative technologies</li>
+<li><strong>Prerequisites:</strong> Introductory ideas of digital musical instruments, physical interaction, and sensors</li>
+<li><strong>Format:</strong> Illustrated lecture, examples, discussion, and a short design exercise</li>
+</ul>
+<p>Digital fabrication lets instrument makers move from a digital design to a physical object using machines such as 3D printers, laser cutters, and CNC routers. This lecture introduces the main fabrication processes and the software that connects design to production. Its focus is on making musical controllers and instruments: enclosures, buttons, brackets, wearable structures, acoustic parts, and assemblies that bring sensors and electronics into a playable form.</p>
+<p>The central idea is that fabrication is part of instrument design. Material, geometry, assembly, and surface affect how an object is held, struck, pressed, worn, repaired, and understood by a performer and audience. The class remains at an introductory level. Detailed machine operation belongs in a trained workshop with its own equipment-specific rules.</p>
+<h2 id="learning-objectives">Learning objectives</h2>
+<p>By the end of the lecture, students should be able to:</p>
+<ol>
+<li>Distinguish additive, subtractive, and sheet-cutting processes, and give examples of each.</li>
+<li>Describe the main families of 3D printing and the kinds of objects each can produce.</li>
+<li>Explain the path from a CAD model to a slicer or CAM project, machine file, fabricated part, and assembled instrument.</li>
+<li>Recognize the roles of CAD, vector drawing, slicer, CAM, and machine-control software.</li>
+<li>Identify design constraints that matter for a physical musical interface, including fit, strength, assembly, ergonomics, and repair.</li>
+<li>Choose a plausible fabrication approach for a small musical controller and explain the choice.</li>
+</ol>
+<h2 id="suggested-two-hour-plan">Suggested two-hour plan</h2>
+<table>
+<thead>
+<tr>
+<th>Time</th>
+<th>Section</th>
+<th>Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0–8 min</td>
+<td>Opening: what does fabrication add to an instrument?</td>
+<td>Object examples and discussion</td>
+</tr>
+<tr>
+<td>8–18 min</td>
+<td>Three ways to shape material</td>
+<td>Additive, subtractive, and sheet-based overview</td>
+</tr>
+<tr>
+<td>18–42 min</td>
+<td>3D printing technologies</td>
+<td>Process families and comparison</td>
+</tr>
+<tr>
+<td>42–54 min</td>
+<td>CAD and design for fabrication</td>
+<td>Geometry, assembly, and interaction</td>
+</tr>
+<tr>
+<td>54–64 min</td>
+<td>Short break</td>
+<td>Break</td>
+</tr>
+<tr>
+<td>64–79 min</td>
+<td>From 3D CAD to slicer to printer</td>
+<td>File workflow and slicer decisions</td>
+</tr>
+<tr>
+<td>79–94 min</td>
+<td>CNC routing and CAM</td>
+<td>Setup, toolpaths, simulation, post-processing</td>
+</tr>
+<tr>
+<td>94–108 min</td>
+<td>Laser cutting and other sheet processes</td>
+<td>2D design, operation layers, assembly</td>
+</tr>
+<tr>
+<td>108–116 min</td>
+<td>Design exercise: fabricate a musical controller</td>
+<td>Small-group sketch</td>
+</tr>
+<tr>
+<td>116–120 min</td>
+<td>Summary and exit question</td>
+<td>Wrap-up</td>
+</tr>
+</tbody>
+</table>
+<p>The timing assumes a brisk survey. If students discuss each example at length, shorten the catalogue of industrial 3D printing processes and retain the CAD-to-machine workflows and design exercise.</p>
+<hr />
+<h2 id="1-opening-what-does-fabrication-add-to-an-instrument-08-min">1. Opening: what does fabrication add to an instrument? (0–8 min)</h2>
+<h3 id="opening-question">Opening question</h3>
+<blockquote>
+<p>What changes when a musical controller becomes a physical object?</p>
+</blockquote>
+<p>Invite students to name an object they have used to make or control sound: a keyboard, guitar pedal, phone, game controller, drum pad, wearable, or custom digital musical instrument (DMI). Ask what makes it playable: shape, size, texture, resistance, weight, spacing, grip, visible controls, feedback, or how it sits in a room.</p>
+<p>Digital fabrication helps make forms that are difficult, slow, or expensive to build by hand. It can produce a custom enclosure, a shaped grip, a mounting plate for sensors, a flexible prototype, or a set of linked parts. A printed box can hold electronics, but the instrument design also decides where a hand rests, how a button is found, how movement is constrained, and whether the performer can replace a broken part.</p>
+<h3 id="three-roles-for-fabrication-in-this-course">Three roles for fabrication in this course</h3>
+<ul>
+<li><strong>Form:</strong> Enclosures, handles, keys, supports, wearables, and instrument bodies.</li>
+<li><strong>Function:</strong> Mounting sensors, controlling cable paths, providing hinges or sliding parts, and setting the movement available to the performer.</li>
+<li><strong>Experience:</strong> Weight, texture, visibility, reach, comfort, sound from the object itself, and the audience’s sense of cause and effect.</li>
+</ul>
+<h3 id="prompt">Prompt</h3>
+<p>Show or describe a simple controller with a microcontroller, one sensor, and a button. Ask: what would a fabricated housing improve? Possible answers include secure mounting, repeatable sensor placement, comfortable grip, protection during performance, and a more legible relationship between action and sound.</p>
+<hr />
+<h2 id="2-three-ways-to-shape-material-818-min">2. Three ways to shape material (8–18 min)</h2>
+<p>Introduce the broad distinction between <strong>additive</strong>, <strong>subtractive</strong>, and <strong>forming or joining</strong> processes.</p>
+<table>
+<thead>
+<tr>
+<th>Process family</th>
+<th>Basic idea</th>
+<th>Examples</th>
+<th>Typical musical-interface use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Additive</td>
+<td>Build an object by adding material, often in layers</td>
+<td>FFF/FDM, SLA, SLS</td>
+<td>Custom enclosures, brackets, grips, complex shapes</td>
+</tr>
+<tr>
+<td>Subtractive</td>
+<td>Remove material from a larger piece of stock</td>
+<td>CNC routing, milling, laser cutting</td>
+<td>Panels, plates, slots, precise flat parts</td>
+</tr>
+<tr>
+<td>Forming / joining</td>
+<td>Shape or connect material without building the whole part through a toolpath</td>
+<td>Bending sheet, casting, fastening, gluing</td>
+<td>Flexible surfaces, assemblies, repairable instruments</td>
+</tr>
+</tbody>
+</table>
+<p>The machine does not remove the need for design decisions. Each process has a different relation to geometry, material, scale, finish, tolerances, and assembly. A part that is easy to print may be awkward to machine from a sheet; a laser-cut panel may be more useful as one face of a multi-part instrument than as a complete enclosure.</p>
+<h3 id="discussion-choose-the-process-after-the-object">Discussion: choose the process after the object</h3>
+<p>Ask what the part needs to do before choosing a machine. A flat faceplate with labelled holes may be a good laser-cut part. A rounded ergonomic grip may be easier to print. A thick hardwood body with a smooth cavity might suit CNC routing. A hybrid instrument may combine all three with screws and off-the-shelf hardware.</p>
+<hr />
+<h2 id="3-3d-printing-technologies-1842-min">3. 3D printing technologies (18–42 min)</h2>
+<h3 id="31-material-extrusion-fff-fdm">3.1 Material extrusion: FFF / FDM</h3>
+<p>Material extrusion feeds thermoplastic filament through a heated nozzle. The nozzle deposits paths layer by layer until the object is built. <strong>Fused filament fabrication (FFF)</strong> is the generic process name; <strong>fused deposition modeling (FDM)</strong> is a widely used commercial term.</p>
+<p>This is the most familiar desktop 3D-printing process for many students and makers. Common materials include PLA, PETG, ABS/ASA, and flexible TPU, each with different properties and print requirements.</p>
+<p><strong>Useful for:</strong> enclosures, brackets, buttons, knobs, clips, grips, mounting fixtures, and quick shape prototypes.</p>
+<p><strong>Design consequences:</strong></p>
+<ul>
+<li>The part is built in layers, so strength can differ by direction. A thin arm may split more easily across its layers than along them.</li>
+<li>Overhangs may need support material or a changed orientation.</li>
+<li>Holes, slots, and thin walls need enough clearance and thickness for the printer and material.</li>
+<li>Orientation affects visible layer lines, surface finish, support marks, print time, and strength.</li>
+<li>Parts that must fit together often need a clearance test instead of assuming the CAD dimensions will fit exactly.</li>
+</ul>
+<h3 id="32-vat-photopolymerization-sla-dlp-and-msla">3.2 Vat photopolymerization: SLA, DLP, and MSLA</h3>
+<p>Vat photopolymerization hardens liquid resin with light. In <strong>SLA</strong>, a laser traces the layer; <strong>DLP</strong> projects a layer image; <strong>MSLA/LCD</strong> exposes a layer through a light source and masking screen. Implementations differ, but all cure photosensitive liquid into a solid part.</p>
+<p><strong>Useful for:</strong> fine details, small buttons or knobs, smooth surfaces, miniatures, and prototypes where surface quality matters.</p>
+<p><strong>Design and process consequences:</strong></p>
+<ul>
+<li>Parts often need supports and careful orientation.</li>
+<li>Uncured resin must be removed; washing and post-curing are commonly part of the process.</li>
+<li>Resin is a chemical material. Follow the printer and workshop requirements for handling, ventilation, protective equipment, and waste.</li>
+<li>Material properties differ from familiar thermoplastics; select a resin for the intended use rather than judging by appearance alone.</li>
+</ul>
+<h3 id="33-powder-bed-fusion-sls-and-metal-processes">3.3 Powder bed fusion: SLS and metal processes</h3>
+<p>Powder bed fusion uses thermal energy to fuse selected areas in a powder bed. <strong>Selective laser sintering (SLS)</strong> commonly produces polymer parts; metal powder-bed systems use a laser or electron beam to fuse metal powder.</p>
+<p><strong>Useful for:</strong> complex parts, interlocking structures, and geometries that would otherwise need many supports. SLS parts can be useful for durable enclosures, brackets, or small-batch components when equipment and service are available.</p>
+<p><strong>Design and process consequences:</strong></p>
+<ul>
+<li>Unfused powder supports parts during the build, but it must be removed afterward.</li>
+<li>Surface texture and dimensional tolerances differ from FFF and resin processes.</li>
+<li>Equipment, material handling, and post-processing needs are more specialized than typical desktop printing.</li>
+</ul>
+<h3 id="34-other-additive-processes">3.4 Other additive processes</h3>
+<p>The ISO/ASTM additive-manufacturing vocabulary groups processes into seven broad families. In addition to material extrusion, vat photopolymerization, and powder bed fusion, these include:</p>
+<ul>
+<li><strong>Material jetting:</strong> deposits droplets of build material, often with curing. It can produce detailed, multi-material parts on specialized systems.</li>
+<li><strong>Binder jetting:</strong> deposits a binder to join regions of powder; the part may require further processing.</li>
+<li><strong>Directed energy deposition:</strong> deposits material while a focused energy source melts it, often for metal repair or large industrial parts.</li>
+<li><strong>Sheet lamination:</strong> bonds sheets of material to build a part.</li>
+</ul>
+<p>These industrial processes are useful to know as a map of the field. The course’s practical emphasis is on selecting an appropriate process for a small instrument component, often FFF, resin printing, laser cutting, or CNC routing.</p>
+<h3 id="35-choosing-a-printing-process">3.5 Choosing a printing process</h3>
+<table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Why it matters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Is the part a quick prototype or a finished component?</td>
+<td>Prototype parts can prioritize iteration; a finished part needs suitable material and finish.</td>
+</tr>
+<tr>
+<td>Does it need to flex, withstand impact, or carry a load?</td>
+<td>Material and build orientation affect mechanical behavior.</td>
+</tr>
+<tr>
+<td>Are small details or a smooth surface essential?</td>
+<td>Resin processes can capture fine details but add handling and post-processing.</td>
+</tr>
+<tr>
+<td>Is the geometry hard to support or assemble?</td>
+<td>Build process and part orientation can change the design.</td>
+</tr>
+<tr>
+<td>Can it be divided into simpler parts?</td>
+<td>A two-part enclosure may be easier to print, service, and revise.</td>
+</tr>
+<tr>
+<td>How will it connect to sensors, electronics, and a performer?</td>
+<td>Mounting, access, cable routing, and comfort are functional requirements.</td>
+</tr>
+</tbody>
+</table>
+<p>The “best” process depends on the role of the part, the available machine and material, workshop constraints, and how many iterations the project can support.</p>
+<hr />
+<h2 id="4-cad-and-design-for-fabrication-4254-min">4. CAD and design for fabrication (42–54 min)</h2>
+<h3 id="41-cad-is-a-design-space-not-just-a-drawing-tool">4.1 CAD is a design space, not just a drawing tool</h3>
+<p>Computer-aided design (CAD) describes the geometry and relationships of a part. A parametric CAD model can preserve dimensions and constraints so that the design can be revised coherently. A mesh or sculpting tool may be better for organic forms. A 2D vector drawing is often the right starting point for flat profiles and laser-cut parts.</p>
+<p>Examples of software include:</p>
+<ul>
+<li><strong>3D parametric CAD:</strong> FreeCAD, Autodesk Fusion, Onshape, SolidWorks.</li>
+<li><strong>Mesh and organic modeling:</strong> Blender, Meshmixer and similar tools.</li>
+<li><strong>2D vector drawing:</strong> Inkscape, Illustrator, and machine-specific laser software.</li>
+<li><strong>Slicers:</strong> PrusaSlicer, Cura, OrcaSlicer, Bambu Studio, PreForm for compatible systems.</li>
+<li><strong>CAM:</strong> FreeCAD Path/CAM, Fusion Manufacture, and machine-specific CAM tools.</li>
+<li><strong>Machine preparation / control:</strong> LightBurn for supported laser systems, printer host software, or the CNC controller interface.</li>
+</ul>
+<p>These names are examples rather than endorsements. Some applications combine CAD, CAM, and machine preparation; others specialize in one step. Always confirm that the chosen software supports the actual machine and its file format.</p>
+<h3 id="42-design-for-assembly-and-play">4.2 Design for assembly and play</h3>
+<p>For a musical interface, a part must fit both its components and a human action. Before modeling, identify:</p>
+<ul>
+<li>component dimensions and mounting-hole locations;</li>
+<li>button, knob, sensor, connector, and display positions;</li>
+<li>cable bends, access to USB or power, and room for fasteners;</li>
+<li>wall thickness, clearances, moving parts, and how parts will be assembled;</li>
+<li>reach, grip, posture, tactile feedback, and the possibility of playing without watching the control;</li>
+<li>access for repair, sensor replacement, and firmware updates.</li>
+</ul>
+<p>Use component datasheets and physical measurements. Add clearance for manufacturing variation and assembly. A quick test coupon or a small print of a connector opening can reveal fit problems before the full enclosure is made.</p>
+<h3 id="discussion-why-not-print-the-whole-instrument-as-one-part">Discussion: why not print the whole instrument as one part?</h3>
+<p>Separate components can be easier to print, repair, and revise. A modular object can use a printed grip, a laser-cut faceplate, standard screws, a replaceable sensor mount, and a microcontroller board. Splitting the design may also improve access and reduce wasted material.</p>
+<hr />
+<h2 id="5-short-break-5464-min">5. Short break (54–64 min)</h2>
+<p>Prompt students to notice how objects around them are assembled. Which parts appear molded, printed, machined, cut from sheet, or fastened together? What design choices are visible at the joints?</p>
+<hr />
+<h2 id="6-from-3d-cad-to-slicer-to-printer-6479-min">6. From 3D CAD to slicer to printer (64–79 min)</h2>
+<h3 id="61-the-workflow">6.1 The workflow</h3>
+<pre><code class="language-text">CAD model → export / project file → slicer → previewed layers and toolpaths
+     → printer-specific machine file → fabrication → support removal / finishing
+     → assembly → test with performer → revise CAD
+</code></pre>
+<p>The CAD model describes the object. The slicer prepares that model for a specific printer and material. It turns the geometry into successive layers, perimeters, infill, supports, and movement instructions. Depending on the machine, the output may be G-code or a manufacturer-specific job file.</p>
+<h3 id="62-typical-file-handoff">6.2 Typical file handoff</h3>
+<ul>
+<li><strong>STL:</strong> common mesh format for a single surface model. It does not preserve the original parametric design history.</li>
+<li><strong>3MF:</strong> a 3D-printing project format that can carry model and print-plate information; useful when the slicer supports it.</li>
+<li><strong>STEP:</strong> a solid-model exchange format often used when moving editable geometry between CAD and CAM tools.</li>
+</ul>
+<p>The right export depends on the next application. Check units and scale after import. A model that appears tiny or enormous may have a unit mismatch.</p>
+<h3 id="63-what-the-slicer-controls">6.3 What the slicer controls</h3>
+<ul>
+<li><strong>Orientation:</strong> affects strength, surface finish, supports, and time.</li>
+<li><strong>Layer height:</strong> affects vertical detail and build time.</li>
+<li><strong>Perimeters and wall thickness:</strong> influence durability and the quality of screw holes or enclosures.</li>
+<li><strong>Infill:</strong> supports upper surfaces and can alter weight and stiffness; it does not replace adequate walls where the part needs strength.</li>
+<li><strong>Supports and adhesion aids:</strong> help difficult geometry stay attached during the print; they also need removal.</li>
+<li><strong>Material profile:</strong> temperature, cooling, speed, and other settings depend on the printer and material.</li>
+</ul>
+<p>Students do not need to memorize settings at this stage. They should understand that slicing is a manufacturing decision. The same CAD model can produce different parts when orientation, material, walls, supports, or printer profile change.</p>
+<h3 id="64-inspect-before-printing">6.4 Inspect before printing</h3>
+<p>Use the slicer’s preview to inspect the actual planned layers and paths. Look for unsupported regions, missing walls, unexpected gaps, poor bed contact, support structures inside inaccessible cavities, and a likely weak orientation. Confirm the part fits within the machine volume and that the selected printer and material profile are correct.</p>
+<h3 id="65-after-printing">6.5 After printing</h3>
+<p>Remove supports and clean the part as appropriate for the process. Check the fit of controls, boards, and fasteners. Assemble the instrument, then test it with the intended gesture. Note what feels wrong: a sharp edge, a loose knob, a hidden connector, a sensor that moves, or a grip that forces an awkward posture. Return those observations to the CAD model for the next version.</p>
+<hr />
+<h2 id="7-cnc-routing-and-cam-7994-min">7. CNC routing and CAM (79–94 min)</h2>
+<h3 id="71-what-a-cnc-router-does">7.1 What a CNC router does</h3>
+<p>A CNC router uses a rotating cutting tool to remove material from a workpiece. It is particularly useful for sheet goods and larger parts in wood, plastics, and some other machine-compatible materials. Many router projects are 2D or <strong>2.5D</strong>: the tool cuts profiles, slots, pockets, and shallow shapes at different depths while the workpiece stays in one orientation.</p>
+<p><strong>Musical-interface uses:</strong> a wooden instrument body, a faceplate, a recessed control surface, a cavity for electronics, a large mounting plate, or a repeatable set of parts.</p>
+<h3 id="72-design-consequences">7.2 Design consequences</h3>
+<ul>
+<li>A round tool cannot make a perfectly sharp internal corner. Internal corners need a radius or a dog-bone relief if a square component must fit.</li>
+<li>Narrow slots and small features are limited by tool diameter and reach.</li>
+<li>The workpiece must be held securely. Workholding affects what areas the cutter can reach.</li>
+<li>Cut depth, tool choice, stock thickness, and setup affect the result.</li>
+<li>Parts may need tabs or another holding strategy so that the final cut does not release them unexpectedly.</li>
+</ul>
+<h3 id="73-cad-to-cam-workflow">7.3 CAD-to-CAM workflow</h3>
+<pre><code class="language-text">CAD solid → CAM setup (machine, stock, origin, tool) → toolpaths
+     → simulation and review → postprocessor → machine-specific NC / G-code
+     → router and workholding → deburr / finish → assemble and test
+</code></pre>
+<p>In CAM, the operator defines the stock, work coordinate system (WCS), tool, operations, and cutting strategy. The software generates and simulates toolpaths. A <strong>postprocessor</strong> translates those paths into code suited to the particular machine and controller. G-code is not automatically interchangeable between CNC machines.</p>
+<p>Simulation helps identify unreachable features, collisions, and incorrect setups. It does not replace checking the real stock, tool, workholding, machine limits, and workshop procedure.</p>
+<h3 id="74-software-examples">7.4 Software examples</h3>
+<p>FreeCAD Path/CAM and Autodesk Fusion Manufacture are examples of tools that connect solid models to CAM setup, toolpaths, simulation, and machine-specific post-processing. A simple router may instead use a more specialized 2D CAM package. Choose the postprocessor for the actual machine and verify the output through the approved workflow.</p>
+<hr />
+<h2 id="8-laser-cutting-and-other-sheet-processes-94108-min">8. Laser cutting and other sheet processes (94–108 min)</h2>
+<h3 id="81-laser-cutting">8.1 Laser cutting</h3>
+<p>A laser cutter follows a path across sheet material. Vector paths can be used for cuts or line marking; filled areas or raster images can be used for engraving. The software assigns operations and settings to groups or layers. For example, a design might engrave labels, score fold lines, and cut the outer profile in a planned order.</p>
+<p><strong>Musical-interface uses:</strong> faceplates, labels, stencils, acrylic or plywood panels, finger guides, flat enclosures, and layered assemblies.</p>
+<p><strong>Design considerations:</strong></p>
+<ul>
+<li>A laser cuts 2D profiles from sheet stock; a three-dimensional object usually needs tabs, slots, spacers, bending, or fasteners.</li>
+<li>The kerf removes material along the cut. Tight-fitting parts need the kerf and material thickness accounted for.</li>
+<li>Lines that overlap can be cut more than once; inspect duplicates and closed paths.</li>
+<li>Engraving and cutting are different operations and are commonly ordered so that internal details are marked before the part is released from the sheet.</li>
+<li>Material compatibility, extraction, fire prevention, and supervision are machine- and workshop-specific. Confirm that the material is approved for the machine and follow local safety rules; do not infer safety from a material’s appearance.</li>
+</ul>
+<h3 id="82-typical-laser-workflow">8.2 Typical laser workflow</h3>
+<pre><code class="language-text">2D vector drawing → vector cleanup and scale check → operation layers
+     → machine/material settings → preview and test piece → cut / engrave
+     → assemble layers → fit electronics and test the interface
+</code></pre>
+<p>LightBurn is one example of software that organizes vector and image work into operation layers for compatible laser systems. Inkscape and other vector editors can create the underlying 2D geometry. Some machines instead use their own software and file conventions.</p>
+<h3 id="83-other-useful-digital-fabrication-processes">8.3 Other useful digital fabrication processes</h3>
+<ul>
+<li><strong>Vinyl cutting:</strong> cuts thin adhesive vinyl or similar sheet materials. Useful for labels, masks, overlays, and decorative or tactile markings, rather than structural parts.</li>
+<li><strong>Waterjet cutting:</strong> uses a high-pressure water stream, often with abrasive, to cut sheet or plate materials on specialized equipment.</li>
+<li><strong>Digital embroidery:</strong> converts vector-like patterns into stitch instructions; useful for conductive textiles and wearable interfaces.</li>
+<li><strong>PCB milling and fabrication:</strong> produces circuit-board prototypes through specialized processes, but the design and electrical rules require a separate lesson.</li>
+<li><strong>Hand tools and conventional workshop processes:</strong> sanding, drilling, bending, fastening, and finishing often complete a digitally fabricated object.</li>
+</ul>
+<h3 id="84-hybrid-construction">8.4 Hybrid construction</h3>
+<p>Different processes can complement one another. A small DMI might use a 3D-printed grip and sensor mount, a laser-cut faceplate, an off-the-shelf microcontroller, and standard screws. The choice should follow function: a fastener should remain accessible, a sensor should stay in place, and the assembled object should support the intended movement.</p>
+<hr />
+<h2 id="9-design-exercise-fabricate-a-musical-controller-108116-min">9. Design exercise: fabricate a musical controller (108–116 min)</h2>
+<h3 id="brief">Brief</h3>
+<p>Design a handheld sound controller with:</p>
+<ul>
+<li>one continuous control (for example, a knob, pressure surface, or bending gesture);</li>
+<li>one discrete control (for example, a button or switch);</li>
+<li>an accessible connection to a microcontroller and a cable or battery;</li>
+<li>a clear way for the performer to understand and repeat the gesture.</li>
+</ul>
+<h3 id="group-task">Group task</h3>
+<p>In five minutes, sketch the object and its fabrication plan. In three minutes, each group gives a short report. Include:</p>
+<ol>
+<li>The performer’s action and how the object is held or placed.</li>
+<li>The component layout: sensor, button, microcontroller, connector, and cable path.</li>
+<li>The proposed process for each major part: print, laser cut, CNC route, or buy/assemble.</li>
+<li>The software path and file handoff: CAD, vector drawing, slicer, CAM, and/or machine-control software.</li>
+<li>One likely fit, strength, comfort, or repair issue, and a way to test it.</li>
+</ol>
+<p>Encourage a hybrid plan. Students do not need to model the object in software; the objective is to connect the physical interaction to a plausible fabrication sequence.</p>
+<h3 id="debrief-questions">Debrief questions</h3>
+<ul>
+<li>Which part sets the performer’s posture or grip?</li>
+<li>Which dimensions should be measured before modeling?</li>
+<li>What needs to remain accessible for assembly or repair?</li>
+<li>What is the first cheap prototype that could test the most important uncertainty?</li>
+<li>Which process choice depends on workshop access or safety training?</li>
+</ul>
+<hr />
+<h2 id="10-summary-and-exit-question-116120-min">10. Summary and exit question (116–120 min)</h2>
+<h3 id="key-ideas">Key ideas</h3>
+<ol>
+<li>Additive, subtractive, and sheet-based processes shape material in different ways.</li>
+<li>3D printing is a family of technologies, not a single process.</li>
+<li>CAD describes the object; slicers and CAM tools prepare it for a specific machine and process.</li>
+<li>Machine files depend on the machine, material, process, and setup. A file that works for one machine may not suit another.</li>
+<li>Fabrication choices affect how an instrument is assembled, held, played, repaired, and perceived.</li>
+<li>A quick prototype should answer a question. It can test fit, reach, strength, balance, or gesture before the full object is made.</li>
+</ol>
+<h3 id="exit-question">Exit question</h3>
+<blockquote>
+<p>Choose one part of a musical instrument you would fabricate. Which process would you use, what software would prepare the job, and what would you test first?</p>
+</blockquote>
+<hr />
+<h2 id="software-and-references">Software and references</h2>
+<p>Software names below are examples. Current machine compatibility, licensing, formats, and interfaces should be checked before a project begins.</p>
+<ul>
+<li><a href="https://www.iso.org/standard/74514.html">ISO/ASTM 52900: Additive manufacturing vocabulary</a></li>
+<li><a href="https://www.nist.gov/additive-manufacturing/research-areas/technologies">NIST: Additive Manufacturing Technologies</a></li>
+<li><a href="https://help.prusa3d.com/article/first-print-with-prusaslicer-2-9_1753">Prusa Knowledge Base: First print with PrusaSlicer</a></li>
+<li><a href="https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-BEC5DEA9-AC3E-4FA8-998E-4AE8CD0D0B1E">Autodesk Fusion: Manufacture overview</a></li>
+<li><a href="https://help.autodesk.com/view/fusion360/ENU/?contextId=MFG-SETUP-2ND-SIDE">Autodesk Fusion: Setups for manufacturing</a></li>
+<li><a href="https://docs.lightburnsoftware.com/2.0/GetStarted/ColorsAndLayers/">LightBurn: Colors and layers</a></li>
+<li><a href="https://www.ehs.harvard.edu/sites/default/files/laser_cutter_preuse_checklist.pdf">Harvard Environmental Health &amp; Safety: Laser cutter pre-use checklist</a></li>
+</ul>
+<h3 id="instructor-note-on-machine-safety">Instructor note on machine safety</h3>
+<p>This lecture explains process concepts and file workflows; it is not machine-operation training. Laser cutters, CNC routers, resin printers, and other fabrication equipment have different hazards and operating requirements. Students should use machines only after the relevant local training, with approved materials and machine-specific procedures. For laser work, material approval, functioning extraction, supervision, and fire precautions are essential workshop controls. For machining, follow the shop’s rules for enclosure, workholding, dust or fume control, tools, and emergency stops.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
