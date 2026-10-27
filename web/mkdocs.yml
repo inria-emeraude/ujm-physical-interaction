@@ -15,7 +15,8 @@ nav:
         - ' 1. Random Note Generator ' : assignments/random.md
         - ' 2. Hardware Control ' : assignments/hardware.md
         # - ' 3. Digital Fabrication ' : assignments/fabrication.md
-        - ' 4. Final Project Prep ' : assignments/final-proj.md
+        # - ' 4. Final Project Prep ' : assignments/final-proj.md
+    - Project: assignments/final-proj.md
     - Last Year's Projects: https://ccrma.stanford.edu/~rmichon/digicrea25/
 
 theme: 
