@@ -10,7 +10,7 @@ Projects should be carried out in groups of 2. Exceptions might be granted (talk
 
 ### Milestone 1: Presenting Final Project Ideas
 
-* **This milestone is due on November 21, 2026.**
+* **This milestone is due on November 19, 2026.**
 * Prepare three final project ideas that you will present during class.
 * Make sure that at least one of these three ideas is "crazy" and that one is technically feasible.
 * Make a diagram/drawing of each idea on an A4 sheet, take photos of them, and upload these photos to this folder: <https://drive.google.com/drive/folders/1rvl-qiQojr3slZ-nwKeEZJH1mGCrWVH1?usp=sharing> naming them `LASTNAME0_firstname0_LASTNAME1_firstname1_0.jpg` where “0” is the idea number.
